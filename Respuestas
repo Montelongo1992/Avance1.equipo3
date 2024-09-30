@@ -1,0 +1,42 @@
+Ideas y Observaciones Clave:
+¿Hay valores faltantes en el conjunto de datos? ¿Se pueden identificar patrones de ausencia?
+Durante el proceso de carga de las imágenes, se identificaron algunos archivos corruptos o ilegibles. Estos archivos se consideraron como valores faltantes. Se eliminó cualquier imagen que no pudiera cargarse adecuadamente para evitar problemas en el entrenamiento del modelo.
+Conclusión: Se identificaron valores faltantes que fueron eliminados, y no se observaron patrones repetitivos en su ausencia.
+
+¿Cuáles son las estadísticas resumidas del conjunto de datos?
+Al analizar la frecuencia de las clases (autorizado y no autorizado), se observó que existe un ligero desequilibrio, con más imágenes de la clase no autorizada. En términos de los valores de los píxeles, las imágenes mostraron distribuciones similares, con ligeras diferencias en los niveles de brillo y contraste.
+Conclusión: Hay un ligero desequilibrio entre las clases. Las estadísticas generales muestran que ambas clases tienen distribuciones de píxeles similares, aunque podrían existir diferencias útiles para el modelo.
+
+¿Hay valores atípicos en el conjunto de datos?
+No se identificaron valores atípicos significativos en las imágenes cargadas, ya que las imágenes corruptas o con baja calidad (por ejemplo, completamente negras o sin variación) fueron eliminadas durante el preprocesamiento.
+Conclusión: Los valores atípicos, como imágenes defectuosas, fueron eliminados del conjunto de datos, lo que asegura que todas las imágenes sean relevantes para el modelo.
+
+¿Cuál es la cardinalidad de las variables categóricas?
+En este proyecto, solo tenemos dos categorías: personas autorizadas y no autorizadas. Esto hace que la cardinalidad sea baja y el problema más manejable en términos de clasificación.
+Conclusión: La cardinalidad es baja (2 clases), lo que hace que el problema sea un ejemplo de clasificación binaria.
+
+¿Existen distribuciones sesgadas en el conjunto de datos? ¿Necesitamos aplicar alguna transformación no lineal?
+Las imágenes fueron normalizadas en términos de brillo y contraste durante el preprocesamiento, lo que ayuda a minimizar posibles sesgos en la distribución de los valores de los píxeles. No fue necesario aplicar ninguna transformación no lineal adicional.
+Conclusión: Las distribuciones de los píxeles no muestran sesgos evidentes. La normalización fue suficiente para garantizar la calidad de los datos.
+
+¿Se identifican tendencias temporales? (En caso de que el conjunto incluya una dimensión de tiempo)
+Este conjunto de datos no tiene una dimensión temporal, por lo que no se aplicó análisis relacionado con el tiempo.
+
+¿Hay correlación entre las variables dependientes e independientes?
+No se realizó un análisis de correlación debido a la naturaleza del conjunto de datos. Las imágenes no son valores numéricos tradicionales, por lo que el concepto de correlación no se aplica directamente.
+Conclusión: No se evaluó la correlación directa debido a la naturaleza visual de los datos.
+
+¿Cómo se distribuyen los datos en función de diferentes categorías?
+Las imágenes se agrupan en dos categorías: autorizados y no autorizados. Se observó un ligero desequilibrio con una mayor cantidad de imágenes de personas no autorizadas.
+Conclusión: Aunque hay un ligero desbalance en las clases, esto será manejado durante el entrenamiento del modelo para evitar sesgos.
+
+¿Existen patrones o agrupaciones (clusters) en los datos con características similares?
+No se realizó un análisis de agrupaciones explícitas. Sin embargo, las diferencias entre las imágenes de las dos clases pueden ser aprovechadas por el modelo para crear clusters implícitos basados en características visuales.
+Conclusión: Las características visuales pueden generar agrupaciones útiles para el modelo de machine learning.
+
+¿Se deberían normalizar las imágenes para visualizarlas mejor?
+Las imágenes ya fueron normalizadas a un rango de 0 a 1 en escala de grises, lo que facilita tanto su visualización como su procesamiento por parte del modelo.
+Conclusión: La normalización aplicada a las imágenes fue adecuada y necesaria para mejorar el rendimiento del modelo.
+
+¿Hay desequilibrio en las clases de la variable objetivo?
+Sí, se observó un desequilibrio en las clases, con más imágenes de personas no autorizadas que de personas autorizadas. Este desbalance deberá ser corregido para evitar un sesgo en el modelo.
